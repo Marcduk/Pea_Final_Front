@@ -19,6 +19,9 @@ export class PortfolioService {
         this.urlAvatar = environment.STORAGE_URL;
     }
 
+   
+  
+
     removeLogin() {
         localStorage.removeItem('auth');
         localStorage.removeItem('uri');

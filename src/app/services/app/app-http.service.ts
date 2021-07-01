@@ -1,3 +1,4 @@
+
 import { AuthService } from './../auth/auth.service';
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
@@ -12,7 +13,9 @@ import {MessageService} from '../app/message.service';
     providedIn: 'root'
 })
 
-export class PortfolioHttpService {
+export class AppHttpService {
+
+    API_URL_APP: string = environment.API_URL_APP;
     auth: User;
 
     constructor(private httpClient: HttpClient,
@@ -34,24 +37,14 @@ export class PortfolioHttpService {
     }
 
 
-    //portfolio consultas se esta enviando por apphttp service
+    //portfolio consultas
     
-
-    /* getSubjects( params = new HttpParams()) {
-        const url = environment.API_URL_APP + 'subjects';
+    getSubject(url: string, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
         return this.httpClient.get(url, {params});
     }
- */
 
-
-
-
-
-
-
-
-
-
+    
 
     loginGoogle() {
         const url = WEB + 'login/google';
@@ -118,10 +111,10 @@ export class PortfolioHttpService {
         });
     }
 
-     get(url: string, params = new HttpParams()) {
+    /* get(url: string, params = new HttpParams()) {
         url = environment.API_URL_AUTHENTICATION + url;
         return this.httpClient.get(url, {params});
-    } 
+    } */
 
     post(url: string, data: any, params = new HttpParams()) {
         url = environment.API_URL_AUTHENTICATION + url;

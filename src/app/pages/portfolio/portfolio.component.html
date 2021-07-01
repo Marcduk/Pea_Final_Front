@@ -1,15 +1,52 @@
-<router-outlet>
-<app-portfolio>
-    <p>portfolio en acción</p>
-<p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+
+  <div style="color: rgb(255, 115, 0);">
+    <h5>CREAR SÍLABO</h5>
+</div>
+  
+  <p-menubar [model]="NavegarMenu" >
+
+  </p-menubar>
+
+<!-- {{NavegarMenu | json}} -->
+
+<!-- {{subjects | json}} -->
+<br>
+<br>
+<div style="color: blue;">
+    <h5>ELEGIR ASIGNATURA</h5>
+</div>
+
+<p-dropdown [options]="subjects" [(ngModel)]="selectedSubject.id" optionLabel="description" [filter]="true"
+    [showClear]="true" placeholder="Seleccione una Asignatura">
+
+    <option *ngFor="let subject of subjects" value={{subject.id}}>
+        {{subject.description}}
+    </option>
+    <img src="assets/demo/flags/flag_placeholder.png"
+        [class]="'flag flag-' + selectedSubject.description.toLowerCase()" />
+</p-dropdown>
+
+<ng-template pTemplate="footer">
+    <div class="p-grid p-nogutter p-justify-between">
+        <p-button label="Back" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+        <p-button label="Complete" (onClick)="complete()" icon="pi pi-angle-right" iconPos="right" styleClass="p-button-success"></p-button>
+    </div>
+</ng-template>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="p-field p-col-12 p-md-6">
+    <span class="p-float-label">
+        <textarea inputId="textarea" rows="5" style="resize: none;" cols="120"  pInputTextarea></textarea>
+        <label for="textarea">Descripción de la Asignatura</label>
+    </span>
+</div>
 
 
-<p-tabMenu [model]="items">
-    <ng-template pTemplate="item" let-item let-i="index">
-        //item content
-    </ng-template>
-</p-tabMenu>
+<button pButton type="button" label="guardar"></button>
 
-</app-portfolio>
 
-</router-outlet>
+<router-outlet></router-outlet>

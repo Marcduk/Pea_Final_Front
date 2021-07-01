@@ -6,11 +6,21 @@ import { AsignatureComponent } from './asignature.component';
 
 // My Components
 
-export const AsignatureRouting: Routes = [
+
+export const AsignatureRouting: Routes  = [
     {
         path: '',
-        component: AsignatureComponent,
-        canActivate: [AuthGuard]
-    },
-    
+        children: [
+               /* {
+                path: 'contenido-asignatura',
+                
+                loadChildren: () => import('./asignature/asignature.module').then(m => m.AsignatureModule),
+                canActivate: [AuthGuard]
+            },   */
+            /* {
+                path: 'web',
+                loadChildren: () => import('./landing-page/landing-page.module').then(m => m.LandingPageModule),
+            }, */
+        ]
+    }
 ];

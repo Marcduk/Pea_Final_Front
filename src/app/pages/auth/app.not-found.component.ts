@@ -16,11 +16,11 @@ import {AuthService} from '../../services/auth/auth.service';
 						<h1>Página no encontrada</h1>
 						<div class="seperator"></div>
 						<p>El recurso solicitado no está disponible en este momento. Por favor, inténtelo de nuevo más tarde.</p>
-						<button pButton type="button" icon="pi pi-sign-in" class="p-mr-6"
+						<!-- <button pButton type="button" icon="pi pi-sign-in" class="p-mr-6"
 								[routerLink]="['/auth/login']"
 								label="Regresar al Login"></button>
 						<button pButton type="button" icon="pi pi-home" *ngIf="role"
-								[routerLink]="['/dashboard']" label="Ir Dashboard"></button>
+								[routerLink]="['/dashboard']" label="Ir Dashboard"></button> -->
 					</div>
 				</div>
 				<div class="desert"></div>

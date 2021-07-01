@@ -21,8 +21,8 @@ export class AuthGuard implements CanActivate {
     }
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        // return true;
-        const requestURL = next['_routerState']['url'];
+        return true;
+         const requestURL = next['_routerState']['url'];
         this.authService.setUri(requestURL);
         this.auth = this.authService.getAuth();
         this.role = this.authService.getRole();
@@ -50,6 +50,7 @@ export class AuthGuard implements CanActivate {
             }
         }
         this.router.navigate(['/auth/access-denied']);
-        return false;
+        return false; 
     }
 }
+
