@@ -2,9 +2,9 @@
 import {Routes} from '@angular/router';
 
 // My Components
-import {AppNotFoundComponent} from './app.not-found.component';
-import {AppAccessDeniedComponent} from './app.access-denied.component';
-import {AppUnderMaintenanceComponent} from './app.under-maintenance.component';
+//import {AppNotFoundComponent} from './app.not-found.component';
+//import {AppAccessDeniedComponent} from './app.access-denied.component';
+//import {AppUnderMaintenanceComponent} from './app.under-maintenance.component';
 import {PasswordResetComponent} from './password-reset/password-reset.component';
 import {PasswordForgotComponent} from './password-forgot/password-forgot.component';
 import {AppLoginComponent} from './login/app.login.component';
@@ -16,18 +16,18 @@ export const AuthRoutes: Routes = [
     {
         path: '',
         children: [
-            {
+           /*  {
                 path: 'not-found',
                 component: AppNotFoundComponent
             },
             {
                 path: 'access-denied',
                 component: AppAccessDeniedComponent
-            },
-            {
+            }, */
+           /*  {
                 path: 'under-maintenance',
                 component: AppUnderMaintenanceComponent
-            },
+            }, */
             {
                 path: 'login',
                 component: AppLoginComponent

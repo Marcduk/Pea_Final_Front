@@ -17,10 +17,11 @@ export const environment = {
     API_URL_WEB: URL_API + 'web/',
     API_URL_TEACHER_EVAL: URL_API + 'teacher_eval/',
     API_URL_COMMUNITY: URL_API + 'community/',
+     API_URL_PORTFOLIO: URL_API + 'portfolio/',
 
     SYSTEM_ID: 1,
     CLIENT_ID: '1',
-    CLIENT_SECRET: '5s5njGg9kWfu1G1SOcxs55F8KVFOW80qurv5auk4',
+    CLIENT_SECRET: 'E2zf9Zjqx8I1fUqRNdcqRRIQzuCUhUZ86nRW0t7N',
     GRANT_TYPE: 'password',
 
     SITE_KEY: '6LcY8xAaAAAAAOTR95-UJ_zAeP9OWYPhlWg4_iFC',

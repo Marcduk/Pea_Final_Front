@@ -9,3 +9,5 @@ export {SchoolPeriod} from './school-period';
 export {Student} from './student';
 export {Status} from './status';
 export {Teacher} from './teacher';
+export {Subject} from './subject';
+export {AcademicPeriod} from './academic-period';
