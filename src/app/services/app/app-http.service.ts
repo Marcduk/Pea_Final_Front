@@ -43,8 +43,41 @@ export class AppHttpService {
         url = this.API_URL_APP + url;
         return this.httpClient.get(url, {params});
     }
+   
 
-    
+    getAcademic(url: string, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
+        return this.httpClient.get(url, {params});
+    }
+
+    getPeriod(url: string, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
+        return this.httpClient.get(url, {params});
+    }
+
+    getCodeSubject(url: string, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
+        return this.httpClient.get(url, {params});
+    }
+
+    getCarrer(url: string, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
+        return this.httpClient.get(url, {params});
+    }
+
+
+
+
+
+
+
+
+    update(url: string, data: any, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
+        return this.httpClient.put(url, data, {params});
+    }
+
+
 
     loginGoogle() {
         const url = WEB + 'login/google';
@@ -121,10 +154,11 @@ export class AppHttpService {
         return this.httpClient.post(url, data, {params});
     }
 
-    update(url: string, data: any, params = new HttpParams()) {
+   
+    /* update(url: string, data: any, params = new HttpParams()) {
         url = environment.API_URL_AUTHENTICATION + url;
         return this.httpClient.put(url, data, {params});
-    }
+    } */
 
     delete(url: string, params = new HttpParams()) {
         url = environment.API_URL_AUTHENTICATION + url;

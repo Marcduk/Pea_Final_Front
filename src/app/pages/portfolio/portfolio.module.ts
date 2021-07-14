@@ -1,3 +1,8 @@
+import { BibliographyComponent } from './bibliography/bibliography.component';
+import { ProfileCareerLearningComponent } from './profile-career-learning/profile-career-learning.component';
+import { StrategyMethodologicalComponent } from './strategy-methodological/strategy-methodological.component';
+import { ContentSubjectComponent } from './content-subject/content-subject.component';
+import { LearningResultComponent } from './learning-result/learning-result.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -27,15 +32,22 @@ import {MenuItem} from 'primeng/api';
 import {StepsModule} from 'primeng/steps';
 import {InputTextModule} from 'primeng/inputtext';
 import { PortfolioRoutes } from './portfolio.routing';
+import { CardModule } from 'primeng/card';
+import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
+
 
 
 
 
 @NgModule({
   declarations: [
-
     PortfolioComponent,
-
+    LearningResultComponent,
+    ContentSubjectComponent,
+    StrategyMethodologicalComponent,
+    ProfileCareerLearningComponent,
+    BibliographyComponent,
+    PortfolioFormComponent
 
   ],
   imports: [
@@ -59,9 +71,21 @@ import { PortfolioRoutes } from './portfolio.routing';
     MenubarModule,
     InputTextareaModule,
     InputTextModule,
+    CardModule,
+    ButtonModule
     
     
   ],
+
+  exports:[
+    PortfolioComponent,
+    LearningResultComponent,
+    ContentSubjectComponent,
+    StrategyMethodologicalComponent,
+    ProfileCareerLearningComponent,
+    BibliographyComponent,
+    PortfolioFormComponent,
+  ], 
 
   
   providers: [MessageService]

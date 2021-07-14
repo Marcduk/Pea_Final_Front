@@ -1,8 +1,8 @@
 import { PortfolioModule } from './pages/portfolio/portfolio.module';
-import { AsignatureModule } from './pages/portfolio/asignature/asignature.module';
+
 // Angular Libs
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +19,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TabMenuModule } from 'primeng/tabmenu';
+
 
 
 
@@ -40,7 +41,6 @@ import { MenuService } from './shared/services/app.menu.service';
 import { InterceptorService } from './interceptors/interceptor.service';
 import { SharedModule } from './pages/shared/shared.module';
 import { PasswordModule } from 'primeng/password';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { DropdownModule } from 'primeng/dropdown';
 
 
@@ -63,7 +63,9 @@ import { DropdownModule } from 'primeng/dropdown';
         TabMenuModule,
         DropdownModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
+       
     ],
     declarations: [
         AppBlankComponent,

@@ -1,5 +1,5 @@
 .landing-body .section#meet-mirage {
-	background-color: #eceff4;
+	background-color: #2164d6;
 	padding: 24px 5% 170px;
 	position: relative;
 }
@@ -9,3 +9,11 @@
 	height: auto;
 	margin-top: 10px;
 }
+
+:host ::ng-deep p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+*{box-sizing:border-box;}
+
