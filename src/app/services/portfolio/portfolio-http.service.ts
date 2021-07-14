@@ -37,15 +37,32 @@ export class PortfolioHttpService {
     //portfolio consultas se esta enviando por apphttp service
     
 
-    /* getSubjects( params = new HttpParams()) {
+     /* getSubjects( params = new HttpParams()) {
         const url = environment.API_URL_APP + 'subjects';
         return this.httpClient.get(url, {params});
+    } */
+ 
+    get(url: string, params = new HttpParams()) {
+        url = environment.API_URL_AUTHENTICATION + url;
+        return this.httpClient.get(url, {params});
+    } 
+
+    post(url: string, data: any, params = new HttpParams()) {
+        url = environment.API_URL_AUTHENTICATION + url;
+        return this.httpClient.post(url, data, {params});
     }
- */
 
+    update(url: string, data: any, params = new HttpParams()) {
+        url = environment.API_URL_AUTHENTICATION + url;
+        return this.httpClient.put(url, data, {params});
+    }
 
+    delete(url: string, params = new HttpParams()) {
+        url = environment.API_URL_AUTHENTICATION + url;
+        return this.httpClient.delete(url, {params});
+    }
 
-
+   
 
 
 
@@ -118,25 +135,7 @@ export class PortfolioHttpService {
         });
     }
 
-     get(url: string, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
-        return this.httpClient.get(url, {params});
-    } 
-
-    post(url: string, data: any, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
-        return this.httpClient.post(url, data, {params});
-    }
-
-    update(url: string, data: any, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
-        return this.httpClient.put(url, data, {params});
-    }
-
-    delete(url: string, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
-        return this.httpClient.delete(url, {params});
-    }
+    
 
     uploadAvatar(data: FormData, params = new HttpParams()) {
         const url = environment.API_URL_AUTHENTICATION + 'users/avatars';

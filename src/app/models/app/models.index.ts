@@ -11,3 +11,4 @@ export {Status} from './status';
 export {Teacher} from './teacher';
 export {Subject} from './subject';
 export {AcademicPeriod} from './academic-period';
+export {SubjectTeacher} from './subject-teacher';

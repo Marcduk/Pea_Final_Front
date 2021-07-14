@@ -1,10 +1,10 @@
-import { AsignatureModule } from './asignature/asignature.module';
+
 
 // Angular Router
 import {Routes} from '@angular/router';
 import {AuthGuard} from '../../shared/guards/auth.guard';
 import { PortfolioComponent } from './portfolio.component';
-import { AsignatureComponent } from './asignature/asignature.component';
+
 
 
 // My Components
@@ -18,15 +18,7 @@ export const PortfolioRoutes: Routes  = [
                 component: PortfolioComponent
             },
 
-
-            {
-                path: '123',
-                component: AsignatureComponent
-            },
-            /* {
-                path: '123',
-                component: AsignatureComponent
-            }, */
+           
             
               /* {
                 path: 'contenido-asignatura',

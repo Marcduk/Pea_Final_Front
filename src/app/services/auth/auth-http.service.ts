@@ -72,8 +72,10 @@ export class AuthHttpService {
         return this.httpClient.post(url, credentials, {params});
     }
 
-    getUser(username: string, params = new HttpParams()) {
-        const url = environment.API_URL_AUTHENTICATION + 'user/' + username;
+    //llamar a vista AUTh Usuarios
+
+    getUser(url: string, params = new HttpParams()) {
+        url = environment.API_URL_AUTHENTICATION + url;
         return this.httpClient.get(url, {params});
     }
 
