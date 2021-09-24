@@ -1,3 +1,28 @@
-<p>
-  learning-result works!
-</p>
+
+   <div class="p-grid">
+    <div class="p-col-12">
+        <app-learning-result-list
+                [learningResultsIn]="learningResults"
+                [flagLearningResults]="flagLearningResults"
+                [paginatorIn]="paginator"
+                [formLearningResultIn]="formLearning"
+                (learningResultsOut)="learningResults=$event"
+                (displayOut)="learningResultDialog=$event"
+                (formLearningResulOut)="formLearning=$event"
+                (paginatorOut)="getLearningResults($event)">
+                
+        </app-learning-result-list>
+
+       <p-dialog [(visible)]="learningResultDialog" [style]="{width: '1000px'}" header="Crear Resultado de Aprendizaje" [modal]="true"
+                  styleClass="p-fluid" (onHide)="learningResultDialog=false">
+            <app-learning-result-form
+                    [learningResultsIn]="learningResults"
+                    [formLearningResultIn]="formLearning"
+                    (learningResultsOut)="learningResults=$event"
+                    (displayOut)="learningResultDialog=$event">
+                    
+
+            </app-learning-result-form>
+        </p-dialog> 
+    </div>
+</div>  

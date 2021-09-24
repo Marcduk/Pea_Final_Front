@@ -1,7 +1,7 @@
-import { SchoolPeriod } from './../app/school-period';
-export interface FormularioPdfs {
-    
-    
+import { SchoolPeriod } from '../app/school-period';
+export interface formularioPdfs {
+       
+    id?:number;
     name?:string;
     code?:string;
     school_period?:string;

@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 
 export { Unit } from './unit';
 export { Content } from './content';
@@ -8,8 +9,7 @@ export { MethodologicalStrategy } from './methodologicalStrategy';
 export { LearningResult } from './learningResult';
 export { DidacticResource } from './didacticResource';
 export { Pea } from './pea';
-export {FormularioPdfs} from './FormularioPdfs';
-
+export {formularioPdfs} from './formularioPdfs';
 
 
 

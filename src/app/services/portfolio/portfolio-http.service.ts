@@ -41,25 +41,36 @@ export class PortfolioHttpService {
         const url = environment.API_URL_APP + 'subjects';
         return this.httpClient.get(url, {params});
     } */
+
+    
  
     get(url: string, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
+        url = environment.API_URL_PORTFOLIO + url;
         return this.httpClient.get(url, {params});
     } 
 
     post(url: string, data: any, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
+        url = environment.API_URL_PORTFOLIO + url;
         return this.httpClient.post(url, data, {params});
     }
 
     update(url: string, data: any, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
+        url = environment.API_URL_PORTFOLIO + url;
         return this.httpClient.put(url, data, {params});
     }
 
     delete(url: string, params = new HttpParams()) {
-        url = environment.API_URL_AUTHENTICATION + url;
+        url = environment.API_URL_PORTFOLIO + url;
         return this.httpClient.delete(url, {params});
+    }
+
+    store(url: string, data: any, params = new HttpParams()) {
+        url = environment.API_URL_PORTFOLIO + url;
+        console.log(params + ' estoy en el servicio imprimiendo datos'); 
+        for (let clave in data){
+            console.log(data[clave]);
+        }       
+        return this.httpClient.post(url, data, {params});
     }
 
    

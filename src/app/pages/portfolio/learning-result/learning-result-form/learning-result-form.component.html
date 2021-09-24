@@ -1,0 +1,95 @@
+<p-toast></p-toast>
+
+
+<div class="p-fluid">
+    <form [formGroup]="formLearningResultIn" (ngSubmit)="onSubmit()">
+
+
+
+        <!-- <div *ngIf="!idField.value || (idField.value && parentField.value)" class="p-formgrid p-grid">  
+             <div class="p-field p-col">
+                <label for="parent">Padre</label>                
+                <p-dropdown id="selectedParentLearning" [options]="parentLearningResults" formControlName="parent" 
+                optionLabel="description"
+                    [filter]="true" filterBy="id" placeholder="Escoja UNIDADES DE COMPETENCIA / PROCESOS">
+
+                                       
+                    <ng-template pTemplate="selectedItem">
+                        <div class="country-item country-item-value" *ngIf="parentField.value">
+                            <div>{{parentField.value.description}}</div>
+                        </div>
+                    </ng-template>
+                    <ng-template let-item pTemplate="item">
+                         <div class="country-item">                             
+                           <div>{{item.description}}</div>
+                        </div>                         
+                    </ng-template>
+                </p-dropdown>
+            </div> 
+        </div>    -->
+
+
+
+        <div class="p-field p-xl-6 p-lg-6 p-md-6 p-sm-12">
+            <label for="type">
+                <i class="p-error">*</i>Resultados de Aprendizaje:
+                <i *ngIf="typeField.valid" class="pi pi-check-circle icon-valid"></i>
+                <i *ngIf="typeField.invalid && (typeField.touched || typeField.dirty)"
+                    class="pi pi-times-circle icon-invalid"></i>
+            </label>
+            <p-dropdown [options]="headers" formControlName="type" placeholder="Seleccione una opción"
+                optionLabel="name" [filter]="true" filterBy="name" [showClear]="true">
+                <option *ngFor="let header of headers" value={{header.name}}>
+                </option>
+                <div *ngIf="typeField.errors && (typeField.touched || typeField.dirty)">
+                    <small *ngIf="typeField.errors?.required" id="user-help-1" class="p-error">
+                        {{typeField.fieldRequired}}
+                    </small>
+                </div>
+            </p-dropdown>
+        </div>
+
+
+        <div class="p-col-12 p-md-6">
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="code">Código:</label>
+                <input id="code" name="code" pInputText formControlName="code" type="number" min="1" step="1"/>
+                <div *ngIf="codeField.errors && codeField.touched">
+                    <small *ngIf="codeField.hasError('required')" id="code-help-1" class="p-error">
+                        {{messageService.fieldRequired}}
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="description">Descripción:</label>
+                <input id="description" name="description" pInputText formControlName="description" />
+                <div *ngIf="descriptionField.errors && descriptionField.touched">
+                    <small *ngIf="descriptionField.hasError('required')" id="name-help-1" class="p-error">
+                        {{messageService.fieldRequired}}
+                    </small>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="p-formgrid p-grid">
+            <div class="p-field p-col">
+                <button type="submit" pButton pRipple label="Guardar uno y Salir" icon="pi pi-save"
+                    class="p-button-success p-button-raised"></button>
+            </div>
+            <div *ngIf="!idField.value" class="p-field p-col">
+                <button type="button" pButton pRipple label="Guardar varios" icon="pi pi-arrow-right"
+                    class="p-button-raised" (click)="onSubmit($event,true)"></button>
+            </div>
+        </div>
+    </form>
+</div>

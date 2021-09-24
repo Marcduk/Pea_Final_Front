@@ -1,3 +1,27 @@
-<p>
-  portfolio-form works!
-</p>
+<div class="col-md-8" id="htmlData">
+  <table class="table table-bordered">
+      <tr class="table-primary">
+        <th>Id</th>
+          <th>Carrera</th>
+          <th>Asignatura</th>
+          <th>Codigo</th>
+          <th>Docente</th>
+      </tr>
+      <tr *ngFor="let user of USERS">
+        <th>{{user.id}}</th>
+          <th>{{user.carrera}}</th>
+          <td>{{user.asignatura}}</td>
+          <td>{{user.codigo}}</td>
+          <td>{{user.docente}}</td>
+      </tr>
+  </table>
+</div>
+
+<!-- <a href="{{ route ('generatePea')}}" class="btn btn-sm btn-primary">Descargar PEA</a> -->
+
+
+<div class="col-md-8 text-right">
+  <button pButton class="p-button-raised p-button-rounded" (click)="downloadPDF()">Download PDF</button>
+
+</div>
+

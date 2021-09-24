@@ -1,8 +1,9 @@
+
 import { BibliographyComponent } from './bibliography/bibliography.component';
 import { ProfileCareerLearningComponent } from './profile-career-learning/profile-career-learning.component';
 import { StrategyMethodologicalComponent } from './strategy-methodological/strategy-methodological.component';
 import { ContentSubjectComponent } from './content-subject/content-subject.component';
-import { LearningResultComponent } from './learning-result/learning-result.component';
+
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -28,12 +29,27 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
 import {MenubarModule} from 'primeng/menubar';
 import {InputTextareaModule} from 'primeng/inputtextarea';
-import {MenuItem} from 'primeng/api';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {PaginatorModule} from 'primeng/paginator';
+import {TreeModule} from 'primeng/tree';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {TableModule} from 'primeng/table';
+
+
+import {SkeletonModule} from 'primeng/skeleton';
 import {StepsModule} from 'primeng/steps';
 import {InputTextModule} from 'primeng/inputtext';
 import { PortfolioRoutes } from './portfolio.routing';
 import { CardModule } from 'primeng/card';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
+import {TabViewModule} from 'primeng/tabview';
+import { SubjectInformationComponent } from './subject-information/subject-information.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import { LearningResultFormComponent } from './learning-result/learning-result-form/learning-result-form.component';
+import { LearningResultListComponent } from './learning-result/learning-result-list/learning-result-list.component';
+import { LearningResultComponent } from './learning-result/learning-result.component';
 
 
 
@@ -42,12 +58,19 @@ import { PortfolioFormComponent } from './portfolio-form/portfolio-form.componen
 @NgModule({
   declarations: [
     PortfolioComponent,
-    LearningResultComponent,
+    
     ContentSubjectComponent,
     StrategyMethodologicalComponent,
     ProfileCareerLearningComponent,
     BibliographyComponent,
-    PortfolioFormComponent
+    PortfolioFormComponent,
+    SubjectInformationComponent,
+    LearningResultComponent,
+    LearningResultListComponent,
+    LearningResultFormComponent,
+
+    
+
 
   ],
   imports: [
@@ -72,20 +95,21 @@ import { PortfolioFormComponent } from './portfolio-form/portfolio-form.componen
     InputTextareaModule,
     InputTextModule,
     CardModule,
-    ButtonModule
-    
+    ButtonModule,
+    TabViewModule,
+    ToolbarModule,
+    SkeletonModule,
+    ConfirmDialogModule,
+    PaginatorModule,
+    TreeModule,
+    OverlayPanelModule,
+    KeyFilterModule,
+    InputNumberModule,
+    TableModule,
     
   ],
 
-  exports:[
-    PortfolioComponent,
-    LearningResultComponent,
-    ContentSubjectComponent,
-    StrategyMethodologicalComponent,
-    ProfileCareerLearningComponent,
-    BibliographyComponent,
-    PortfolioFormComponent,
-  ], 
+  
 
   
   providers: [MessageService]

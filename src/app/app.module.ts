@@ -62,7 +62,6 @@ import { DropdownModule } from 'primeng/dropdown';
         PasswordModule,
         TabMenuModule,
         DropdownModule,
-        FormsModule,
         AppRoutingModule,
         ReactiveFormsModule
        

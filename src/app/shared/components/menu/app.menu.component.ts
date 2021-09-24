@@ -30,10 +30,10 @@ export class AppMenuComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getMenus();
+        //this.getMenus();
     }
 
-    getMenus() {
+    /* getMenus() {
         this.authHttpService.getMenus().subscribe(response => {
             this.permissions = response['data'];
             this.menus = [];
@@ -63,7 +63,7 @@ export class AppMenuComponent implements OnInit {
         }, error => {
             this.messageService.error(error);
         });
-    }
+    } */
 
     onMenuClick() {
         this.appMain.menuClick = true;

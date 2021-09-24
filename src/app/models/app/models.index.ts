@@ -1,3 +1,4 @@
+import { Mesh } from './mesh';
 export {Catalogue} from './catalogue';
 export {Location} from './location';
 export {Image} from './image';
@@ -12,3 +13,4 @@ export {Teacher} from './teacher';
 export {Subject} from './subject';
 export {AcademicPeriod} from './academic-period';
 export {SubjectTeacher} from './subject-teacher';
+export {Mesh} from './mesh';

@@ -1,0 +1,205 @@
+
+<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+
+<p-card header="Información General de la asignatura">
+    <div class="p-fluid">
+        <div class="p-grid">
+
+
+            <div class="p-xl-6" >
+                <label>Carrera:</label> <br><br>
+                <p-dropdown [options]="subjects" [(ngModel)]="selectedSubject" optionLabel="name" [filter]="true"
+                    filterBy="name" placeholder="Seleccione una carrera"  formControlName="name">
+                    <ng-template pTemplate="selectedItem">
+                        <div class="country-item country-item-value" *ngIf="selectedSubject">
+                            <div>{{selectedSubject.mesh?.career?.name}} </div>
+                        </div>
+                    </ng-template>
+                    <ng-template let-item pTemplate="item">
+                        <div class="country-item">
+                            <div> {{item.mesh?.career?.name}} </div>
+                        </div>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="p-grid p-fluid">
+
+            <div class="p-col-12 p-md-6">
+                <label>Asignatura</label> <br><br>
+                <p-dropdown [options]="subjects" [(ngModel)]="selectedSubject" optionLabel="name" [filter]="true"
+                    filterBy="name" placeholder="Seleccione una asignatura"  formControlName="selectedSubject">
+                    <ng-template pTemplate="selectedItem">
+                        <div class="country-item country-item-value" *ngIf="selectedSubject">
+                            <div>{{selectedSubject.name}} </div>
+                        </div>
+                    </ng-template>
+                    <ng-template let-item pTemplate="item">
+                        <div class="country-item">
+                            <div> {{item.name}} </div>
+                        </div>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+
+
+
+            <div class="p-col-12 p-md-6">
+                <label for="carrera">Código de la Asignatura:</label> <br><br>
+                <div class="p-inputgroup">
+                    <input pInputText value="{{selectedSubject?.code}}" [disabled]="disabled">
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+
+
+
+        <div class="p-grid p-fluid">
+            <div class="p-col-12 p-md-6">
+                <label for="carrera">Periodo Académico:</label> <br><br>
+                <div class="p-inputgroup">
+                    <input pInputText value="{{selectedSubject?.name}}" [disabled]="disabled">
+
+                    
+                </div>
+            </div>
+
+           
+
+             <!-- combobox periodo lectivo -->
+             <div class="p-col-12 p-md-6">
+                <label>Periodo Lectivo</label> <br><br>
+                <p-dropdown [options]="periods" id="selectedPeriod"  
+                    optionLabel="code" [filter]="true" placeholder="Seleccione un Periodo Lectivo">
+                    <option *ngFor=" let period of periods " value={{period.id}}>
+                        {{period.code}}
+                    </option>                    
+                </p-dropdown>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="p-grid p-fluid">
+            <div class="p-col-12 p-md-4">
+                <label for="carrera">Unidad de Organización Curricular:</label> <br><br>
+                <div class="p-inputgroup">
+                    <input pInputText value="{{selectedSubject?.name}}" [disabled]="disabled">
+                </div>
+            </div>
+
+            <div class="p-col-12 p-md-4">
+                <label for="carrera">Campos de Formación:</label> <br><br>
+                <div class="p-inputgroup">
+                    <input pInputText value="{{selectedSubject?.name}}" [disabled]="disabled">
+                </div>
+            </div>
+
+            <div class="p-col-12 p-md-4">
+                <label for="carrera">Modalidad:</label> <br><br>
+                <div class="p-inputgroup">
+                    <input pInputText value="{{selectedSubject?.name}}" [disabled]="disabled">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</p-card>
+
+
+<p-card header="Distribución de horas en las actividades de Aprendizaje">
+
+
+    <div class="p-grid p-fluid">
+        <div class="p-col-12 p-md-4">
+            <label for="carrera">Horas Docencia:</label> <br><br>
+            <div class="p-inputgroup">
+                <input pInputText value="{{selectedSubject?.teaching_hour}}" [disabled]="disabled">
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-4">
+            <label for="carrera">Horas Trabajo Autónomo:</label> <br><br>
+            <div class="p-inputgroup">
+                <input pInputText value="{{selectedSubject?.autonomous_hour}}" [disabled]="disabled">
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-4">
+            <label for="carrera">Horas Prácticas de Aprendizaje:</label> <br><br>
+            <div class="p-inputgroup">
+                <input pInputText value="{{selectedSubject?.practical_hour}}" [disabled]="disabled">
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+
+
+    <div class="p-grid p-fluid">
+        <div class="p-col-12 p-md-6">
+            <label for="carrera">Total horas de Asignatura:</label> <br><br>
+            <div class="p-inputgroup">
+                <input pInputText value="{{selectedSubject?.total_hour}}" [disabled]="disabled">
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-6">
+            <label for="carrera">Docente responsable de la asignatura:</label> <br><br>
+            <div class="p-inputgroup">
+                <input pInputText value="{{selectedSubject?.name}}" [disabled]="disabled">
+            </div>
+        </div>
+    </div>
+
+
+</p-card>
+
+
+
+
+
+<p-card header="Descripción de la Asignatura - Objetivo General">
+
+
+    <div class="p-grid p-fluid">
+        <div class="p-col-12 p-md-6">
+            <label for="carrera">Descripción de la Asignatura:</label> <br><br>
+            <div class="p-inputgroup">
+                <textarea pInputTextarea class="p-col-11" value="{{selectedSubject?.description}}" disabled type="text"
+                    rows="5" cols="120" autoResize=true></textarea>
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-6">
+            <label for="carrera">Objetivo General:</label> <br><br>
+            <div class="p-inputgroup">
+                <textarea pInputTextarea class="p-col-11" value="{{selectedSubject?.objective}}" disabled type="text"
+                    rows="5" cols="120" autoResize=true></textarea>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div>
+        <button  pButton class="p-button-raised p-button-rounded"  (click)="clear()">Limpiar Campos</button>
+        <button pButton class="p-button-raised p-button-rounded" type="submit" [disabled]="user.invalid">Validar-Guardar</button>
+    </div>
+
+
+</p-card>
+
+
+</form>
+
+

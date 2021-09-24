@@ -1,3 +1,4 @@
+import { Mesh } from './../../models/app/mesh';
 
 import { AuthService } from './../auth/auth.service';
 import {Injectable} from '@angular/core';
@@ -39,16 +40,34 @@ export class AppHttpService {
 
     //portfolio consultas
     
-    getSubject(url: string, params = new HttpParams()) {
-        url = this.API_URL_APP + url;
+    getSubjects(meshId: number, params = new HttpParams()) {
+        const url = this.API_URL_APP + 'subjects';
+        params = params.append('mesh_id', meshId?.toString());
         return this.httpClient.get(url, {params});
     }
-   
+
+    getMeshes(institutionId: number, params = new HttpParams()) {
+        const url = this.API_URL_APP + 'meshes';
+        params = params.append('institution_id', institutionId?.toString());
+        return this.httpClient.get(url, {params});
+    }
+
 
     getAcademic(url: string, params = new HttpParams()) {
         url = this.API_URL_APP + url;
         return this.httpClient.get(url, {params});
     }
+
+    /* getHeaders(url: string, params = new HttpParams()) {
+        url = this.API_URL_APP + url;
+        return this.httpClient.get(url, {params});
+    } */
+
+    get(url: string, params = new HttpParams()) {
+        url = environment.API_URL_APP + url;
+        return this.httpClient.get(url, {params});
+    } 
+
 
     getPeriod(url: string, params = new HttpParams()) {
         url = this.API_URL_APP + url;
@@ -64,7 +83,10 @@ export class AppHttpService {
         url = this.API_URL_APP + url;
         return this.httpClient.get(url, {params});
     }
-
+    store(url: string, data: any, params = new HttpParams()) {
+        url = environment.API_URL_APP + url;
+        return this.httpClient.post(url, data, {params});
+    }
 
 
 
